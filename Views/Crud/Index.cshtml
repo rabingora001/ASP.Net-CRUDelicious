@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using CRUDelicious.Models
+
+<h1 style="text-align: center"> Welcome to CRUDelicious!!!</h1>
+<Em><strong><p>Check out some recent dishes!</p></strong></Em>
+<p style="text-align: right"> 
+    <a href="AddPage">Add a Dish</a>
+</p>
+<hr>
+
+    @foreach (var i in @ViewBag.AllDish)
+    {
+        <p><a href="/show/@i.CrudId">@i.Name</a> by @i.Chef</p>
+    }
+

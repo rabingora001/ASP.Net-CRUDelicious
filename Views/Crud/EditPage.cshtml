@@ -1,0 +1,51 @@
+@model Crud
+@using CRUDelicious.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Page</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/">Home</a>
+        <center>
+            <h1>Edit @ViewBag.Show.Name</h1>
+        </center>
+
+        <form asp-action="EditDish" asp-controller="Crud" method="post">
+            <div class="form-group">
+                <span style="color:red" asp-validation-for="Chef"></span><br>
+                Chef's Name: <input type="text" asp-for="Chef" value="@ViewBag.Show.Chef">
+            </div>
+            <div class="form-group">
+                <span style="color:red" asp-validation-for="Name"></span><br>
+                Name of Dish: <input type="text" asp-for="Name" value="@ViewBag.Show.Name">
+            </div>
+            <div class="form-group">
+                <span style="color:red" asp-validation-for="Calories"></span><br>
+                # of Caoloies: <input type="number" asp-for="Calories" value="@ViewBag.Show.Calories">
+            </div>
+            <div class="form-group">
+                <span style="color:red" asp-validation-for="Tastiness"></span><br>
+                Tastiness:  <select asp-for="Tastiness">
+                                <option selected="selected" selected diabled hidden>@ViewBag.Show.Tastiness</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+            </div>
+            <div class="form-group">
+                <span style="color:red" asp-validation-for="Description"></span><br>
+                Description:<textarea asp-for="Description" rows="3" placeholder="@ViewBag.Show.Description"></textarea>
+            </div>
+            <button type="submit">Edit Dish</button>
+        </form>
+    </div>
+</body>
+</html>

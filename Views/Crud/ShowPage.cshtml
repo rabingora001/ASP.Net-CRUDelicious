@@ -1,0 +1,18 @@
+@using CRUDelicious.Models
+@model Crud
+
+<a href="/">Home</a>
+
+<center>
+<h1>@ViewBag.Show.Name</h1>
+<h3>@ViewBag.Show.Chef</h3>
+</center>
+
+<hr>
+<strong><P>@ViewBag.Show.Description</P></strong>
+<br>
+
+<p>Calories: @ViewBag.Show.Calories</p>
+<p>Tastiness: @ViewBag.Show.Tastiness</p>
+
+<p><a href="delete/@ViewBag.Show.CrudId">Delete</a> | <a href="/edit/@ViewBag.Show.CrudId"> Edit</p>
